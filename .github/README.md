@@ -53,8 +53,8 @@ example of usage in the core
 modifying the bp set by this aura with an AuraScript sets a custom speed
 
 Spellwork 8326
-![8326 spell info ](8326_ghost.png)
 
+![8326 spell info](8326_ghost.png)
 
 ## How to create your own module
 
