@@ -68,8 +68,8 @@ class spell_ghost_speed_night_elf_aura : public AuraScript
 
     void Register() override
     {
-        DoEffectCalcAmount += AuraEffectCalcAmountFn(spell_ghost_speed_night_elf_aura::CalculateAmountSpeed, EFFECT_1, SPELL_AURA_MOD_INCREASE_SPEED);
-        DoEffectCalcAmount += AuraEffectCalcAmountFn(spell_ghost_speed_night_elf_aura::CalculateAmountSwimSpeed, EFFECT_2, SPELL_AURA_MOD_INCREASE_SWIM_SPEED);
+        DoEffectCalcAmount += AuraEffectCalcAmountFn(spell_ghost_speed_night_elf_aura::CalculateAmountSpeed, EFFECT_0, SPELL_AURA_MOD_INCREASE_SPEED);
+        DoEffectCalcAmount += AuraEffectCalcAmountFn(spell_ghost_speed_night_elf_aura::CalculateAmountSwimSpeed, EFFECT_1, SPELL_AURA_MOD_INCREASE_SWIM_SPEED);
     }
 };
 
