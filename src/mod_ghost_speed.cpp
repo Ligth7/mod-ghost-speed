@@ -14,12 +14,12 @@ class spell_ghost_speed_aura : public AuraScript
 
     void CalculateAmountSpeed(AuraEffect const* /*aurEff*/, int32& amount, bool& /*canBeRecalculated*/)
     {
-        amount = 200; // default: 50
+        amount = 500; // default: 50
     }
 
     void CalculateAmountSwimSpeed(AuraEffect const* /*aurEff*/, int32& amount, bool& /*canBeRecalculated*/)
     {
-        amount = 200; // default: 50
+        amount = 500; // default: 50
     }
 
     void Register() override
