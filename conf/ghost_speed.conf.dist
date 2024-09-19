@@ -1,0 +1,25 @@
+#
+# Copyright (C) 2016+ AzerothCore <www.azerothcore.org>, released under GNU AGPL v3 license: https://github.com/azerothcore/azerothcore-wotlk/blob/master/LICENSE-AGPL3
+#
+
+[worldserver]
+
+########################################
+# Ghost Speed module configuration
+########################################
+#
+#    GhostSpeed.Speed
+#        Description: Custom BasePoints for 8326 Ghost EFFECT_1 SPELL_AURA_MOD_INCREASE_SPEED
+#        Default:     200 - Fast
+#                     50  - Blizzard Default
+#                     500 - Zoom
+#
+#    GhostSpeed.SwimSpeed
+#        Description: Custom BasePoints for 8326 Ghost EFFECT_2 SPELL_AURA_MOD_INCREASE_SWIM_SPEED
+#        Default:     200 - Fast
+#                     50  - Blizzard Default
+#                     500 - Zoom
+#
+
+GhostSpeed.Speed = 200
+GhostSpeed.SwimSpeed = 200

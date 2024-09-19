@@ -1,10 +1,31 @@
 /*
  * Copyright (C) 2016+ AzerothCore <www.azerothcore.org>, released under GNU AGPL v3 license: https://github.com/azerothcore/azerothcore-wotlk/blob/master/LICENSE-AGPL3
  */
+#include "Config.h"
+#include "ScriptMgr.h"
 #include "SpellAuraEffects.h"
 #include "SpellInfo.h"
 #include "SpellScript.h"
 #include "SpellScriptLoader.h"
+#include "mod_ghost_speed.h"
+
+GhostSpeed* GhostSpeed::instance()
+{
+    static GhostSpeed instance;
+    return &instance;
+}
+
+class world_ghost_speed : public WorldScript
+{
+public:
+    world_ghost_speed() : WorldScript("world_ghost_speed") { }
+
+    void OnAfterConfigLoad(bool /*reload*/) override
+    {
+        sGhostSpeed->speed = sConfigMgr->GetOption<int32>("GhostSpeed.Speed", 200);
+        sGhostSpeed->speedSwim = sConfigMgr->GetOption<int32>("GhostSpeed.SpeedSwim", 200);
+    }
+};
 
 // 8326 Ghost
 class spell_ghost_speed_aura : public AuraScript
@@ -13,12 +34,12 @@ class spell_ghost_speed_aura : public AuraScript
 
     void CalculateAmountSpeed(AuraEffect const* /*aurEff*/, int32& amount, bool& /*canBeRecalculated*/)
     {
-        amount = 200; // default: 50
+        amount = sGhostSpeed->speed;
     }
 
     void CalculateAmountSwimSpeed(AuraEffect const* /*aurEff*/, int32& amount, bool& /*canBeRecalculated*/)
     {
-        amount = 200; // default: 50
+        amount = sGhostSpeed->speedSwim;
     }
 
     void Register() override
@@ -30,5 +51,6 @@ class spell_ghost_speed_aura : public AuraScript
 
 void AddSC_ghost_speed_spell_script()
 {
+    new world_ghost_speed();
     RegisterSpellScript(spell_ghost_speed_aura);
 }
