@@ -14,7 +14,7 @@
 #                     50  - Blizzard Default
 #                     500 - Zoom
 #
-#    GhostSpeed.SwimSpeed
+#    GhostSpeed.SpeedSwim
 #        Description: Custom BasePoints for 8326 Ghost EFFECT_2 SPELL_AURA_MOD_INCREASE_SWIM_SPEED
 #        Default:     200 - Fast
 #                     50  - Blizzard Default
@@ -22,4 +22,4 @@
 #
 
 GhostSpeed.Speed = 200
-GhostSpeed.SwimSpeed = 200
+GhostSpeed.SpeedSwim = 200
