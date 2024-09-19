@@ -1,0 +1,42 @@
+#
+# Copyright (C) 2016+ AzerothCore <www.azerothcore.org>, released under GNU AGPL v3 license: https://github.com/azerothcore/azerothcore-wotlk/blob/master/LICENSE-AGPL3
+#
+
+[worldserver]
+
+########################################
+# Ghost Speed module configuration
+########################################
+#
+#    GhostSpeed.Speed
+#        Description: Custom BasePoints for 8326 Ghost EFFECT_1 SPELL_AURA_MOD_INCREASE_SPEED
+#        Default:     200 - Fast
+#                     50  - Blizzard Default
+#                     75  - Blizzard Default for Night Elves (+50% racial bonus)
+#                     500 - Zoom
+#
+#    GhostSpeed.SpeedSwim
+#        Description: Custom BasePoints for 8326 Ghost EFFECT_2 SPELL_AURA_MOD_INCREASE_SWIM_SPEED
+#        Default:     200 - Fast
+#                     50  - Blizzard Default
+#                     75  - Blizzard Default for Night Elves (+50% racial bonus)
+#                     500 - Zoom
+#
+#    GhostSpeed.SpeedNightElf
+#        Description: Custom BasePoints for Night Elf 20584 Ghost EFFECT_1 SPELL_AURA_MOD_INCREASE_SPEED
+#        Default:     300 - Fast (200 + 50% racial bonus)
+#                     50  - Blizzard Default
+#                     75  - Blizzard Default for Night Elves (+50% racial bonus)
+#                     500 - Zoom
+#
+#    GhostSpeed.SpeedSwimNightElf
+#        Description: Custom BasePoints for Night Elf 20584 Ghost EFFECT_2 SPELL_AURA_MOD_INCREASE_SWIM_SPEED
+#        Default:     300 - Fast (200 + 50% racial bonus)
+#                     50  - Blizzard Default
+#                     75  - Blizzard Default for Night Elves (+50% racial bonus)
+#                     500 - Zoom
+
+GhostSpeed.Speed             = 200
+GhostSpeed.SpeedSwim         = 200
+GhostSpeed.SpeedNightElf     = 300
+GhostSpeed.SpeedSwimNightElf = 300

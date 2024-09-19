@@ -6,46 +6,32 @@
 [![Build Status](
 https://github.com/sogladev/mod-ghost-speed/actions/workflows/core-build.yml/badge.svg?branch=master&event=push)](https://github.com/sogladev/mod-ghost-speed)
 
-This is a module for [AzerothCore](http://www.azerothcore.org) that changes the speed of Ghost
+This is a module for [AzerothCore](http://www.azerothcore.org) that changes the speed while dead
 
-- Modifies ghost speed to use custom values
+- Modifies Ghost speed to use custom values
 
 
 ## How to install
 https://www.azerothcore.org/wiki/installing-a-module
 
-1. Modify value(s) `src/mod_ghost_speed.cpp`
-2. Requires source recompilation
-3. Modify database (should be done automaticly)
-
-```
-amount = 200; // default: 50
-```
-
-example values:
-```
-50  default
-200 fast
-500 zoom
-```
-
-Apply database changes (this should be done automaticly): `data/sql/db-world/base/ghost_speed.sql`
-```
-DELETE FROM `spell_script_names` WHERE `spell_id` = 8326;
-INSERT INTO `spell_script_names` (`spell_id`, `ScriptName`) VALUES (8326, 'spell_ghost_speed_aura');
-```
+1. Requires source recompilation
+2. Modify config
+  found in `/etc/modules`, copy `.conf.dist` to `.conf` and edit
+3. Apply database changes
+  this should be done automaticly `data/sql/db-world/base/ghost_speed.sql`
 
 ## How to remove
 
 1. Undo database changes: `optional/undo_ghost_speed.sql`
-```
-DELETE FROM `spell_script_names` WHERE `spell_id` = 8326;
-```
 
 2. Remove `mod-ghost-speed` folder
 
 ## Resources
 ghost speed is set by aura 8326
+
+Night Elves are applied `ID - 20584 Ghost` with Blizzard Default speed of 75 (+50% increase)
+
+Highest speed value is applied
 
 example of usage in the core
 - https://github.com/azerothcore/azerothcore-wotlk/blob/a196f7f28aa263dc7f9c532e15839f3b409fb68f/src/server/game/Handlers/CharacterHandler.cpp#L957
