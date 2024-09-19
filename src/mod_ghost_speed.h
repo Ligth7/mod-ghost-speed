@@ -8,6 +8,8 @@ public:
 
     int32 speed;
     int32 speedSwim;
+    int32 speedNightElf;
+    int32 speedSwimNightElf;
 };
 
 #define sGhostSpeed GhostSpeed::instance()
